@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+        body,
+        button {
+            font-family: "Wix Madefor Display", sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5rem;
+            margin-bottom: 3rem;
+        }
+
+        #container>div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            text-align: center;
+            background-color: #d3f2f6;
+        }
+
+        button {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <input id="inputCategoria">
+        <button onclick="aggiungiCategoria()">Aggiungi categoria</button>
+    </div>
+    <div id="container">
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        let categorie = [];
+        let elementi = {}
+
+        // Funzione che crea una card categoria
+        let creaCategoria = (nomeCategoria, indice) => {
+            let divCategoria = document.createElement("div");
+            divCategoria.className = "card";
+            divCategoria.id = "categoria" + indice
+
+            // Titolo div categoria
+            let spanTitolo = document.createElement("span");
+            spanTitolo.className = "titolo"
+            spanTitolo.innerHTML = nomeCategoria;
+
+            // input elementi categoria 
+            let input = document.createElement("input");
+            input.id = "input" + indice;
+
+            // crea button per aggiungere elemento
+            let button = document.createElement("button");
+            button.innerHTML = "Aggiungi elemento";
+            button.onclick = () => aggiungiElemento(indice);
+
+            divCategoria.appendChild(spanTitolo);
+            divCategoria.appendChild(input);
+            divCategoria.appendChild(button);
+
+            // Append elementi al divCategoria
+            elementi[indice].forEach((nomeElemento) => {
+                let spanElemento = document.createElement("span");
+                spanElemento.innerHTML = nomeElemento;
+
+                divCategoria.appendChild(spanElemento)
+            })
+
+            return divCategoria;
+        }
+
+        // Funzione per fare il render delle categorie
+        let renderCategorie = () => {
+            let container = document.getElementById("container");
+
+            container.innerHTML = "";
+
+            categorie.forEach((nomeCategoria, indice) => {
+                let divCategoria = creaCategoria(nomeCategoria, indice);
+                container.appendChild(divCategoria);
+            })
+        }
+
+        renderCategorie();
+
+        // Funzione per aggiungere un'altra categoria
+        let aggiungiCategoria = () => {
+            let inputCategoria = document.getElementById("inputCategoria");
+            let nomeCategoria = inputCategoria.value;
+
+            categorie.push(nomeCategoria);
+            let ultimoIndice = categorie.length - 1
+            elementi[ultimoIndice] = [];
+
+            renderCategorie();
+        }
+
+        // Funzione per aggiungere un nuovo elemento
+        let aggiungiElemento = (indice) => {
+            let inputElemento = document.getElementById("input" + indice);
+            let nomeElemento = inputElemento.value;
+            elementi[indice].push(nomeElemento);
+
+            renderCategorie();
+        }
+    </script>
+</body>
+
+</html>

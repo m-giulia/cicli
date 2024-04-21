@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclo for</title>
+</head>
+<body>
+    <div>
+         <!--<h1>Costo del biglietto</h1>
+        controllo età --
+        <input type="number" name="" id="inputEta" value="">
+        <button onclick="controlloEta()">controllo</button>
+        -->
+        <!-- controllo passeggeri -->
+
+        <h1>Prenotazione volo</h1>
+        <input type="number" name="" id="inputPasseggeri" value="" min="1">
+        <button onclick="controlloDisp()">Controlla Disponibilità</button>
+        <p id="pippo"></p>
+        
+    </div>
+
+    <script>
+        let content = '';
+
+        /* for (let x = 1; x < 21; x++) {
+            content += '<p>' + x + '</p>';
+            
+            if (x == 10) {
+                break;
+            }
+        }
+        document.getElementById('pippo').innerHTML += content; */
+
+        /* let numero = 11;
+        var y = 1;
+        var i = 1;
+        while (i <= 4) {
+            y = y * i;
+            i++;
+        }
+
+        while (numero < 10 ) {
+            if (numero <= 5) {
+                document.getElementById('pippo').innerHTML += '<p>Ingresso gratuito</p>';
+                break;
+            } else if (numero > 5) {
+                document.getElementById('pippo').innerHTML += '<p>Ingresso 10€</p>';
+                break;
+            }
+                numero++;
+        } */
+
+        /* let numero = 0;
+
+        do {
+            numero++ ; 
+            // i = i + 10;
+
+            if (numero == 5) {
+                document.getElementById('pippo').innerHTML += numero + ' €' ;
+                break;
+            }        
+        }
+        while (numero < 10) */
+
+
+        /* function controlloEta() {
+
+        let eta = document.getElementById('inputEta').value;
+
+            switch (eta){
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                    document.getElementById('pippo').innerHTML += 'Ingresso gratuito' ;
+                    break;
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                case "10":
+                    document.getElementById('pippo').innerHTML += 'Ingresso 10€' ;
+                    break;
+            }
+        } */
+
+        function controlloDisp() {
+
+            let numPasseggeri = document.getElementById('inputPasseggeri').value;
+            let postiDisponibili = 5;
+            
+                if (numPasseggeri <= postiDisponibili){
+                    switch (numPasseggeri){
+                        case "1":
+                        case "2":
+                        case "3":
+                        case "4":
+                            document.getElementById('pippo').innerHTML = 'Grazie per la sua prenotazione, rimangono '+ (postiDisponibili - numPasseggeri) + ' posti disponibili' ;
+                            break;
+                        case "5":
+                            document.getElementById('pippo').innerHTML = 'Grazie per la sua prenotazione, tutti i posti sono stati prenotati' ;
+                            break;
+                    }
+                }
+                else {
+                    document.getElementById('pippo').innerHTML = 'Siamo spiacenti, il numero di posti non è sufficiente' ;
+                }
+
+                //document.getElementById('pippo').innerHTML += eta ;
+            }
+        
+        
+
+
+
+            /*
+            2 variabili  
+            passeggeri
+            posti disponibili
+            - simuliamo input n° passeggeri
+            - posti disponibili dalla compagnia che decidiamo noi
+            
+             casistiche 
+            - tutti i passeggeri c'è posto (posti = passeggeri)
+            - solo una parte di posti dispobili (posti < passeggeri - 1)
+            - meno della metà disponibili (posti < metà passeggeri)
+            */
+
+
+    </script>
+</body>
+</html>

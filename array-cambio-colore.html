@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/array-cambio-colore.css">
+    </head>
+
+    <body>
+
+
+        <div class="container">
+            <div class="select">
+                <select name="" id="selezione">
+                    <option>Seleziona un Colore</option>
+                </select>
+                <button id="changeColor" onclick="cambiaColore()">Cambia</button>
+            </div>
+            <div class="post-it" id="pippo">
+                <h2>SPESA</h2>
+                <ul>
+                    <li>Pomodori</li>
+                    <li>Sale</li>
+                    <li>Carta forno</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            /*  let items = [
+                    [1, 2],
+                    [3, 4],
+                    [5, 6]
+                ];
+                console.log(items[0][0]); // 1
+                console.log(items[0][1]); // 2
+                console.log(items[1][0]); // 3
+                console.log(items[1][1]); // 4
+                console.log(items); 
+            */
+
+            let colori = [
+                "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque", "blanchedalmond", "blue", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "cyan", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkgrey", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkslategrey", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dimgrey", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", "green", "greenyellow", "honeydew", "hotpink", "indianred", "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgray", "lightgreen", "lightgrey", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategrey", "lightsteelblue", "lightyellow", "lime", "limegreen", "linen", "magenta",  "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "mintcream", "mistyrose", "moccasin", "navajowhite", "oldlace", "olive", "olivedrab", "orange", "orangered", "orchid", "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "purple", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "silver", "skyblue", "slateblue", "slategray", "snow", "springgreen", "steelblue", "tan", "teal", "thistle", "tomato	", "turquoise", "violet", "wheat", "white", "whitesmoke", "yellow", "yellowgreen"
+            ];
+            let select = document.getElementById("selezione");
+            let coloreSelezionato = select.value;
+
+            //let numeroColori = 0;
+            for (let i = 0; i < colori.length; i++) {
+                let opzione = select.options.add(new Option(colori[i], colori[i]));
+            }
+            function cambiaColore() {
+                console.log(select.value);
+                document.getElementById("pippo").style.backgroundColor = select.value;
+            }
+        </script>
+
+
+
+
+
+    </body>
+
+</html>
